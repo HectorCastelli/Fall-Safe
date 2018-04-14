@@ -5,12 +5,21 @@ using UnityEngine;
 public class CollisionEvaluation : MonoBehaviour {
 
     public bool _isColliding = false;
+    public bool _isEnabled = false;
     public float CollisionScore = 0;
 
     public Transform firstImpactPoint;
+    
+    public void FinishAnimation()
+    {
+        Debug.Log("FinishAnimation");
+        this.GetComponent<Animator>().enabled = false;
+        _isEnabled = true;
+    }
 
     public void AddCollision(Collision collision, int weight)
     {
+        if (!_isEnabled) return;
         if(!_isColliding)
         {
             //Return if the collision is with itself, only consider after they are already touching the ground.
