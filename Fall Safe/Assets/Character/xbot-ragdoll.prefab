@@ -2302,7 +2302,7 @@ Animator:
   m_GameObject: {fileID: 1966261868737600}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: aafe729d0d0cc74429cfc29579d69141, type: 3}
-  m_Controller: {fileID: 9100000, guid: b2a8267531e881642bbcb15a7429ea37, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2322,14 +2322,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftElbow: {fileID: 54024101167550884}
-  leftArm: {fileID: 54222280531034978}
+  leftShoulder: {fileID: 54222280531034978}
   rightElbow: {fileID: 54034996728856630}
-  rightArm: {fileID: 54450193890346392}
+  rightShoulder: {fileID: 54450193890346392}
   leftKnee: {fileID: 54616152732188154}
   leftHip: {fileID: 54957669486108012}
   rightKnee: {fileID: 54871098289218148}
   rightHip: {fileID: 54747718249761510}
-  ForceMultiplier: 1000
+  ForceMultiplier: 1
+  TorqueMultiplier: 1000
 --- !u!135 &135454290898953444
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2364,8 +2365,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13311142
-  m_Height: 0.44370472
+  m_Radius: 0.1028538
+  m_Height: 0.4437047
   m_Direction: 1
   m_Center: {x: 0, y: -0.22185236, z: 0}
 --- !u!136 &136259686814360826
@@ -2377,7 +2378,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.094688796
+  m_Radius: 0.05469061
   m_Height: 0.47344398
   m_Direction: 0
   m_Center: {x: 0.23672199, y: 0, z: 0}
@@ -2390,7 +2391,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.09469061
+  m_Radius: 0.05469061
   m_Height: 0.47345304
   m_Direction: 0
   m_Center: {x: -0.23672652, y: 0, z: 0}
@@ -2403,7 +2404,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13285495
+  m_Radius: 0.0828538
   m_Height: 0.5314198
   m_Direction: 1
   m_Center: {x: 0, y: -0.2657099, z: 0}
@@ -2416,7 +2417,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13285382
+  m_Radius: 0.0828538
   m_Height: 0.5314153
   m_Direction: 1
   m_Center: {x: 0, y: -0.26570764, z: 0}
@@ -2442,7 +2443,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.13311161
+  m_Radius: 0.1028538
   m_Height: 0.44370535
   m_Direction: 1
   m_Center: {x: 0, y: -0.22185268, z: 0}
@@ -2826,7 +2827,7 @@ CharacterJoint:
   m_GameObject: {fileID: 1832468342513886}
   m_ConnectedBody: {fileID: 54450193890346392}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 1}
+  m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0.2784152, y: -0.00000019152843, z: 0.00000011362136}
   serializedVersion: 2
