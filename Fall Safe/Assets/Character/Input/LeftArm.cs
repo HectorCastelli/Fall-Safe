@@ -8,11 +8,12 @@ public class LeftArm : InputController
     void Update()
     {
         if (!_isEnabled) return;
+        if (Input.GetMouseButtonDown(0)) SetOriginalMousePosition();
         if (Input.GetMouseButton(0))
         {
             //Get Mouse Delta
             Vector3 mouseDelta = Input.mousePosition - _oldMousePosition;
-            _oldMousePosition = Input.mousePosition;
+            //_oldMousePosition = Input.mousePosition;
             //Manipulate Right Arm
             //X is shoulder
             //Y is elbow
