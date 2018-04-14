@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftLeg : MonoBehaviour
+public class LeftLeg : InputController
 {
-    public bool _isEnabled = false;
-
-    private Vector3 _oldMousePosition;
-
     // Update is called once per frame
     void Update()
     {
@@ -24,10 +20,7 @@ public class LeftLeg : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            _isEnabled = false;
-            //Destroy(this.GetComponent<CharacterJoint>());
-            //Destroy(this.GetComponent<Rigidbody>());
-            this.GetComponent<Rigidbody>().isKinematic = true;
+            StopMotion();
         }
     }
 }
