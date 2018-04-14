@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 99788779}
   - component: {fileID: 99788778}
   m_Layer: 0
-  m_Name: Plane (2)
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 400006136}
   - component: {fileID: 400006135}
   m_Layer: 0
-  m_Name: Plane (3)
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 658853046}
   - component: {fileID: 658853045}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1151,7 +1151,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4156860060532410, guid: 067ac4e62f8fbf6479c8bbb95c62f0e7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.3103256
+      value: 1.3103257
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 067ac4e62f8fbf6479c8bbb95c62f0e7, type: 2}
@@ -1292,7 +1292,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 45
+  field of view: 40
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1316,8 +1316,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 701324024}
-  m_LocalRotation: {x: -0.3236197, y: 0.21669175, z: -0.075977884, w: -0.9179011}
-  m_LocalPosition: {x: 1.3103256, y: 3.501837, z: -3.099949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
