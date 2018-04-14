@@ -2427,6 +2427,66 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 144346120570987956, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144907954895917238, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144773029498489282, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144011046302806192, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144677090298720814, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144218279731264084, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144244552426998562, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144293484588441832, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144172482316669996, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144058966798650956, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_EnableProjection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144011046302806192, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_Axis.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 144011046302806192, guid: 1987c7ebd415f4a47b6f578759d90967,
+        type: 2}
+      propertyPath: m_Axis.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114327689401568890, guid: 1987c7ebd415f4a47b6f578759d90967, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1987c7ebd415f4a47b6f578759d90967, type: 2}
@@ -2893,7 +2953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e07033bc770338e4a9590ea9b5c69814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isEnabled: 0
+  _isEnabled: 1
   _oldMousePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2112743082 stripped
 GameObject:
@@ -2916,7 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30be4aa00c62a1d479578946d3ac1b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isEnabled: 0
+  _isEnabled: 1
   _oldMousePosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2145799017
 GameObject:

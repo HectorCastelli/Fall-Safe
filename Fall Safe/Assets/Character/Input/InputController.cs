@@ -9,6 +9,12 @@ public class InputController : MonoBehaviour {
     [HideInInspector]
     public Vector3 _oldMousePosition;
 
+    public void SetOriginalMousePosition()
+    {
+        _oldMousePosition = Input.mousePosition;
+        this.GetComponent<Rigidbody>().isKinematic = false;
+    }
+
     public void StopMotion()
     {
         _isEnabled = false;
