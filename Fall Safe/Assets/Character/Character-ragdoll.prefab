@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 4600243611057242}
   - component: {fileID: 95022696921786044}
   - component: {fileID: 114785808642374972}
+  - component: {fileID: 114926292992874206}
   m_Layer: 0
   m_Name: Character-ragdoll
   m_TagString: Player
@@ -2022,7 +2023,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54083440352042858
@@ -2037,8 +2038,8 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 32
+  m_Interpolate: 0
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54152948475410024
 Rigidbody:
@@ -2052,7 +2053,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54359419617818356
@@ -2067,7 +2068,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54411496575290896
@@ -2082,7 +2083,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54520833178408410
@@ -2097,7 +2098,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54536928925405750
@@ -2112,7 +2113,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54799583940973116
@@ -2127,7 +2128,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54901852049960960
@@ -2142,7 +2143,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54902237430791326
@@ -2157,7 +2158,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54972867161674742
@@ -2172,7 +2173,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &65635688169308580
@@ -2206,7 +2207,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043821273980966}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: f48f53017642dec409d6fdbe34e58d6c, type: 3}
   m_Controller: {fileID: 9100000, guid: 94c9770aec826da46befa37aec9c9eb9, type: 2}
   m_CullingMode: 1
@@ -2448,6 +2449,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 40
+--- !u!114 &114926292992874206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1043821273980966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dc3fe99552a9f4f9ce7c8036dcc85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114933358946193562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2482,7 +2494,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08780952
+  m_Radius: 0.11780952
   m_Center: {x: 0, y: 0.08780952, z: 0}
 --- !u!136 &136292652183216050
 CapsuleCollider:

@@ -18,12 +18,6 @@ public class CollisionEvaluation : MonoBehaviour {
         _isEnabled = true;
     }
 
-    public void ResumeSimmulation()
-    {
-        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
-            rb.isKinematic = false;
-    }
-
     public void AddCollision(Collision collision, int weight)
     {
         if (!_isEnabled) return;
