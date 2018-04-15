@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour {
     GameObject loss;
     Animator wAnim;
     Animator lAnim;
+    GameObject hud;
+    Animator hudAnim;
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class UIManager : MonoBehaviour {
         loss = GameObject.Find("Loss");
         wAnim = win.GetComponent<Animator>();
         lAnim = loss.GetComponent<Animator>();
+        hud = GameObject.Find("Hud");
+        hudAnim = hud.GetComponent<Animator>();
     }
 
     void Update()
@@ -36,7 +40,7 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-   
+
     public void Expand()
     {
         if (expand == true)
@@ -70,5 +74,16 @@ public class UIManager : MonoBehaviour {
         wAnim.SetBool("Win", false);
         lAnim.SetBool("Loss", false);
         yield return null;
+    }
+    public IEnumerator Credits()
+    {
+        yield return new WaitForSeconds(1);
+        hudAnim.SetBool("Credits", false);
+        yield return null;
+    }
+    public void GoCredits()
+    {
+        hudAnim.SetBool("Credits", true);
+        StartCoroutine(Credits());
     }
 }
