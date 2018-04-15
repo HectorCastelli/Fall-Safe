@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] int debugnum;
     [SerializeField] public List<AudioClip> BackgroundMusicLibrary = new List<AudioClip>();
     [SerializeField] public List<AudioClip> SoundEffectsLibrary = new List<AudioClip>();
     [Header("Audio Sources")]
@@ -13,18 +14,65 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioSource PlaySoundEffects;
     public enum SoundEffectsEnum
     {
-        x, xx, xxx, xxxx
+        Fan,
+        GlassBreak1,
+        GlassBreak2,
+        GlassBreak3,
+        GruntF1,
+        GruntF2,
+        GruntF3,
+        GruntM1,
+        GruntM2,
+        GruntM3,
+        GruntM4,
+        GruntM5,
+        Lightswitch1,
+        Lightswitch2,
+        Lightswitch3,
+        Lightswitch4,
+        Lightswitch5,
+        Sting1_Heavy,
+        Sting2_Shock,
+        Sting3_HardBass,
+        Sting4_Cymbals,
+        WoodFracture1,
+        WoodFracture2,
+        WoodFracture3,
+        WoodFracture4,
+        WoodFracture5,
+        WoodFracture6,
+        Footstep_Bathroom_Soft1,
+        Footstep_Bathroom_Soft2,
+        Footstep_Bathroom_Soft3,
+        Footstep_Bathroom_Soft4,
+        Footstep_Bathroom_Soft5,
+        Footstep_Bathroom_Soft6
+
     }
     public enum BackgroundMusicEnum
     {
-        y, yy, yyy, yyyy
+        Relaxed,
+    }
+    private void Update()
+    {
+        //this is only to test if the things work
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!PlaySoundEffects.isPlaying)
+            {
+                debugnum++;
+
+                //TriggerSoundEffect(SoundEffectsEnum.Fan, transform.position);
+                FadeBGMusic(BackgroundMusicEnum.Relaxed); 
+            }
+
+        }
     }
     public void FadeBGMusic(BackgroundMusicEnum BGMItem)
     {
 
         StartCoroutine(FadeMusic(BGMItem));
-        BGMusic2.clip = BackgroundMusicLibrary[(int)BGMItem];
-        BGMusic2.Play();
+      
 
     }
     public void StopBGMusic()
@@ -32,9 +80,26 @@ public class AudioManager : MonoBehaviour
         BGMusic1.Stop();
         BGMusic2.Stop();
     }
-    public void TriggerSoundEffect(SoundEffectsEnum SEItem)
+    public void TriggerSoundEffect(SoundEffectsEnum SEItem, Vector3 location = default(Vector3))
     {
-        PlaySoundEffects.clip = SoundEffectsLibrary[(int)SEItem];
+        if (!PlaySoundEffects.isPlaying)
+        {
+
+
+            //if not a default location, set the audio source to play a 3d noise. 
+            if (location != Vector3.zero)
+            {
+                PlaySoundEffects.clip = SoundEffectsLibrary[(int)SEItem];
+                PlaySoundEffects.spatialBlend = 1;
+                AudioSource.PlayClipAtPoint(SoundEffectsLibrary[(int)SEItem], location);
+            }
+            //is a 2D sound
+            else
+            {
+                PlaySoundEffects.spatialBlend = 0;
+                PlaySoundEffects.clip = SoundEffectsLibrary[(int)SEItem];
+            }
+        }
     }
     IEnumerator FadeMusic(BackgroundMusicEnum BGMitem)
     {
