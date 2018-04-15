@@ -19,7 +19,7 @@ public class ResumeAnimationOnEnable : MonoBehaviour {
 
 
             FindObjectOfType<CollisionEvaluation>().EnableInput();
-
+            FindObjectOfType<RandomCameraChanger>()._isEnabled = true;
             AudioManager myAudio = FindObjectOfType<AudioManager>();
             myAudio.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Sting3_HardBass);
             myAudio.FadeBGMusic(AudioManager.BackgroundMusicEnum.Fall);
