@@ -77,7 +77,11 @@ public class UIManager : MonoBehaviour {
     }
     public void RandomScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(Random.Range(0, UnityEngine.SceneManagement.SceneManager.sceneCount - 1));
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
     }
     public IEnumerator Credits()
     {
