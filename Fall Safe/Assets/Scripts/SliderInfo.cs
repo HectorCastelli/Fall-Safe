@@ -16,7 +16,7 @@ public class SliderInfo : MonoBehaviour
 
     private void Update()
     {
-        HealthBarImage.fillAmount -= (Time.fixedDeltaTime / 5f);
+        HealthBarImage.fillAmount -= (Time.deltaTime / 5f);
         if (Input.GetMouseButtonDown(0))
         {
             HealthBarImage.fillAmount += .15f;

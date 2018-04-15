@@ -449,6 +449,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 72d5fcd7504d5c54783d154e92609249, type: 3}
   - {fileID: 8300000, guid: f4e43653145a5b9429b3c56e70acc554, type: 3}
   - {fileID: 8300000, guid: 285456a19ee67d948b1972bc02a7c344, type: 3}
+  - {fileID: 8300000, guid: 7f30c26fc004ecd4a96d1c747449b09d, type: 3}
+  - {fileID: 8300000, guid: 0c0194e4760eaf249b37568ad4d85671, type: 3}
+  - {fileID: 8300000, guid: bb81d8dc483c4f34fbf3f7019a41c545, type: 3}
+  - {fileID: 8300000, guid: 113d2746670f6bc4e8e021e3b886669b, type: 3}
+  - {fileID: 8300000, guid: 27537f1516f860e4d83cd5ba6bc8814a, type: 3}
+  - {fileID: 8300000, guid: 67b9b22465dac2c4ea99b56692bfbfd2, type: 3}
+  - {fileID: 8300000, guid: 182052ce4d980ae4aa97ac438924d971, type: 3}
   BGMusic1: {fileID: 82917552718878800}
   BGMusic2: {fileID: 82911026018721514}
   PlaySoundEffects: {fileID: 82025160882434258}

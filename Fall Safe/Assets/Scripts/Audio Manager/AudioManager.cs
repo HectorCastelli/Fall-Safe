@@ -56,7 +56,14 @@ public class AudioManager : MonoBehaviour
         Fall_Bathroom_Soft1,
         Fall_Bathroom_Hard1,
         Slip_Bathroom_Tile1,
-        Slip_Bathroom_Tile2
+        Slip_Bathroom_Tile2,
+        HardFall_LivingRoom,
+        SoftFall_LivingRoom,
+        Footstep_Soft_LivingRoom1,
+        Footstep_Soft_LivingRoom2,
+        Tripwire_LivingRoom,
+        FallSound,
+        SlowDown
 
     }
     public enum BackgroundMusicEnum
