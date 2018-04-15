@@ -11,7 +11,7 @@ public class CharacterDriver : MonoBehaviour {
         foreach (Rigidbody rb in FindObjectsOfType<Rigidbody>())
             rbs.Add(rb);
     }
-
+    
     // Update is called once per frame
     void FixedUpdate () {
         if (Input.GetMouseButton(0))

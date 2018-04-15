@@ -16,7 +16,7 @@ public class CollisionMessage : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         //Debug.Log(collision.collider.name);
-        if (!collision.collider.CompareTag("Player")) Instantiate(HitParticle, collision.contacts[0].point, Quaternion.FromToRotation(this.transform.up,collision.contacts[0].normal));
+        if (!collision.collider.CompareTag("Player") && FindObjectOfType<CollisionEvaluation>()._isEnabled) Instantiate(HitParticle, collision.contacts[0].point, Quaternion.FromToRotation(this.transform.up,collision.contacts[0].normal));
         cEval.AddCollision(collision, weight);
     }
 }
