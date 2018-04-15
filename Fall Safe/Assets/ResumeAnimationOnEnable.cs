@@ -16,7 +16,8 @@ public class ResumeAnimationOnEnable : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             anim.speed = 1;
-            //MUSIC HERE
+            AudioManager myAudio = FindObjectOfType<AudioManager>();
+            myAudio.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Sting3_HardBass);
         }
     }
 }

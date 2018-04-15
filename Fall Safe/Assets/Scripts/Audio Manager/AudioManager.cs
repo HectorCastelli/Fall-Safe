@@ -108,6 +108,7 @@ public class AudioManager : MonoBehaviour
             {
                 PlaySoundEffects.spatialBlend = 0;
                 PlaySoundEffects.clip = SoundEffectsLibrary[(int)SEItem];
+                PlaySoundEffects.Play();
             }
         }
     }
