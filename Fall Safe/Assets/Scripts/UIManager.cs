@@ -7,22 +7,33 @@ public class UIManager : MonoBehaviour {
     Camera cam;
     Animator settingsAnim;
     bool expand = false;
+    [SerializeField]
     GameObject settings;
-    GameObject quit;
 
     void Start()
     {
         cam = Camera.main;
         settings = GameObject.Find("Setting");
         settingsAnim = settings.GetComponent<Animator>();
-        quit = GameObject.Find("Quit");
     }
 
     void Update()
     {
-     
+        if (Input.GetMouseButtonDown(0))
+        {
+            //Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            //RaycastHit hit;
+            //if(Physics2D.Raycast(ray, out hit ,1000))
+            //{
+            //    Debug.Log(hit.collider.tag);
+            //}
+        }
     }
 
+    public void Print()
+    {
+        print("adsdsadasdsadas");
+    }
     public void Expand()
     {
         if (expand == true)
@@ -35,9 +46,5 @@ public class UIManager : MonoBehaviour {
             expand = true;
             settingsAnim.SetBool("Expand", true);
         }
-    }
-    public void Quit()
-    {
-        Application.Quit();
     }
 }
