@@ -46,7 +46,17 @@ public class AudioManager : MonoBehaviour
         Footstep_Bathroom_Soft3,
         Footstep_Bathroom_Soft4,
         Footstep_Bathroom_Soft5,
-        Footstep_Bathroom_Soft6
+        Footstep_Bathroom_Soft6,
+        Footstep_Bathroom_Hard1,
+        Footstep_Bathroom_Hard2,
+        Footstep_Bathroom_Hard3,
+        Footstep_Bathroom_Hard4,
+        Footstep_Bathroom_Hard5,
+        Footstep_Bathroom_Hard6,
+        Fall_Bathroom_Soft1,
+        Fall_Bathroom_Hard1,
+        Slip_Bathroom_Tile1,
+        Slip_Bathroom_Tile2
 
     }
     public enum BackgroundMusicEnum
