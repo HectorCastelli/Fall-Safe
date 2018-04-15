@@ -15,7 +15,11 @@ public class ResumeAnimationOnEnable : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            anim.speed = 1;
+            anim.speed = 0.2f;
+
+
+            FindObjectOfType<CollisionEvaluation>().EnableInput();
+
             AudioManager myAudio = FindObjectOfType<AudioManager>();
             myAudio.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Sting3_HardBass);
         }

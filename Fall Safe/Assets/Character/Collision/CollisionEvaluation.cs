@@ -11,17 +11,51 @@ public class CollisionEvaluation : MonoBehaviour {
     public Transform firstImpactPoint;
     public GameObject firstImpactCamera;
 
+    private GameObject sliderinfor;
+
+    private void Awake()
+    {
+
+        sliderinfor = FindObjectOfType<SliderInfo>().gameObject;
+        sliderinfor.SetActive(false);
+    }
+
+    public void EnableInput()
+    {
+        sliderinfor.SetActive(true);
+    }
+
     public void StopAnimatorAndWait()
     {
-        Debug.Log("Here");
+        //Debug.Log("Here");
         this.GetComponent<Animator>().speed = 0;
+        foreach (CharacterJoint joint in FindObjectsOfType<CharacterJoint>())
+        {
+            joint.GetComponent<Rigidbody>().isKinematic = true;
+        }
     }
 
     public void EnableRagdoll()
     {
-        Debug.Log("FinishAnimation");
-        this.GetComponent<Animator>().enabled = false;
-        _isEnabled = true;
+        //Debug.Log("FinishAnimation");
+
+
+        if (FindObjectOfType<SliderInfo>().GetSliderValue > 0.5f)
+        {
+            FindObjectOfType<UIManager>().Win();
+        } else
+        {
+            this.GetComponent<Animator>().enabled = false;
+            _isEnabled = true;
+            foreach (CharacterJoint joint in FindObjectsOfType<CharacterJoint>())
+            {
+                joint.GetComponent<Rigidbody>().Sleep();
+                joint.GetComponent<Rigidbody>().isKinematic = false;
+                joint.GetComponent<Rigidbody>().WakeUp();
+            }
+            FindObjectOfType<UIManager>().Loss();
+        }
+        FindObjectOfType<SliderInfo>().enabled = false;
     }
 
     public void AddCollision(Collision collision, int weight)

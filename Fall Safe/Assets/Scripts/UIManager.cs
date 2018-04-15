@@ -28,17 +28,17 @@ public class UIManager : MonoBehaviour {
         hudAnim = hud.GetComponent<Animator>();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Win();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Loss();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        Win();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        Loss();
+    //    }
+    //}
 
 
     public void Expand()
@@ -73,7 +73,8 @@ public class UIManager : MonoBehaviour {
         yield return new WaitForSeconds(1);
         wAnim.SetBool("Win", false);
         lAnim.SetBool("Loss", false);
-        yield return null;
+        yield return new WaitForSecondsRealtime(3f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Random.Range(0, UnityEngine.SceneManagement.SceneManager.sceneCount-1));
     }
     public IEnumerator Credits()
     {
