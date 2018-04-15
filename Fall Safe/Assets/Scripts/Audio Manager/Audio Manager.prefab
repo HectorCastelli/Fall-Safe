@@ -405,6 +405,7 @@ MonoBehaviour:
   debugnum: 0
   BackgroundMusicLibrary:
   - {fileID: 8300000, guid: 36d50523a2f1d244cb5a5a5302ec8af4, type: 3}
+  - {fileID: 8300000, guid: d850b4a67b384cb4da9ccf4043a88365, type: 3}
   SoundEffectsLibrary:
   - {fileID: 8300000, guid: 132f5d9af29ac5a48879a624d0142444, type: 3}
   - {fileID: 8300000, guid: 827f13b0007af0542bc572ccfe3acce8, type: 3}

@@ -69,22 +69,9 @@ public class AudioManager : MonoBehaviour
     public enum BackgroundMusicEnum
     {
         Relaxed,
+        Fall
     }
-    private void Update()
-    {
-        //this is only to test if the things work
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!PlaySoundEffects.isPlaying)
-            {
-                debugnum++;
-
-                //TriggerSoundEffect(SoundEffectsEnum.Fan, transform.position);
-                FadeBGMusic(BackgroundMusicEnum.Relaxed); 
-            }
-
-        }
-    }
+   
     public void FadeBGMusic(BackgroundMusicEnum BGMItem)
     {
 

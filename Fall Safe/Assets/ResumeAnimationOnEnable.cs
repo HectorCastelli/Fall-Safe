@@ -22,6 +22,7 @@ public class ResumeAnimationOnEnable : MonoBehaviour {
 
             AudioManager myAudio = FindObjectOfType<AudioManager>();
             myAudio.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Sting3_HardBass);
+            myAudio.FadeBGMusic(AudioManager.BackgroundMusicEnum.Fall);
         }
     }
 }

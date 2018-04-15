@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionEvaluation : MonoBehaviour {
+public class CollisionEvaluation : MonoBehaviour
+{
 
     public bool _isColliding = false;
     public bool _isEnabled = false;
     public float CollisionScore = 0;
-
+    AudioManager myAudioMan;
     public Transform firstImpactPoint;
     public GameObject firstImpactCamera;
 
@@ -19,6 +20,10 @@ public class CollisionEvaluation : MonoBehaviour {
         sliderinfor = FindObjectOfType<SliderInfo>().gameObject;
         sliderinfor.SetActive(false);
     }
+    private void Start()
+    {
+        myAudioMan = FindObjectOfType<AudioManager>();
+    }
 
     public void EnableInput()
     {
@@ -27,6 +32,13 @@ public class CollisionEvaluation : MonoBehaviour {
 
     public void StopAnimatorAndWait()
     {
+        if (myAudioMan != null)
+        {
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.SlowDown);
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Fan, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z));
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Slip_Bathroom_Tile1, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+
+        }
         //Debug.Log("Here");
         this.GetComponent<Animator>().speed = 0;
         foreach (CharacterJoint joint in FindObjectsOfType<CharacterJoint>())
@@ -43,8 +55,13 @@ public class CollisionEvaluation : MonoBehaviour {
         if (FindObjectOfType<SliderInfo>().GetSliderValue > 0.5f)
         {
             FindObjectOfType<UIManager>().Win();
-        } else
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Footstep_Soft_LivingRoom2, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+        }
+        else
         {
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Fall_Bathroom_Hard1, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.WoodFracture4);
+
             this.GetComponent<Animator>().enabled = false;
             _isEnabled = true;
             foreach (CharacterJoint joint in FindObjectsOfType<CharacterJoint>())
@@ -61,7 +78,7 @@ public class CollisionEvaluation : MonoBehaviour {
     public void AddCollision(Collision collision, int weight)
     {
         if (!_isEnabled) return;
-        if(!_isColliding)
+        if (!_isColliding)
         {
             //Return if the collision is with itself, only consider after they are already touching the ground.
             if (collision.collider.CompareTag("Player")) return;
@@ -71,6 +88,6 @@ public class CollisionEvaluation : MonoBehaviour {
             _isColliding = true;
             weight *= 2;
         }
-        CollisionScore += (collision.relativeVelocity.magnitude) * (float)weight * ((collision.rigidbody!=null)?collision.rigidbody.mass:1);
+        CollisionScore += (collision.relativeVelocity.magnitude) * (float)weight * ((collision.rigidbody != null) ? collision.rigidbody.mass : 1);
     }
 }
