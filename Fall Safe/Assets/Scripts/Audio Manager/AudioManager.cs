@@ -53,21 +53,21 @@ public class AudioManager : MonoBehaviour
     {
         Relaxed,
     }
-    private void Update()
-    {
-        //this is only to test if the things work
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!PlaySoundEffects.isPlaying)
-            {
-                debugnum++;
+    //private void Update()
+    //{
+    //    //this is only to test if the things work
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        if (!PlaySoundEffects.isPlaying)
+    //        {
+    //            debugnum++;
 
-                //TriggerSoundEffect(SoundEffectsEnum.Fan, transform.position);
-                FadeBGMusic(BackgroundMusicEnum.Relaxed); 
-            }
+    //            //TriggerSoundEffect(SoundEffectsEnum.Fan, transform.position);
+    //            FadeBGMusic(BackgroundMusicEnum.Relaxed); 
+    //        }
 
-        }
-    }
+    //    }
+    //}
     public void FadeBGMusic(BackgroundMusicEnum BGMItem)
     {
 
