@@ -73,8 +73,11 @@ public class UIManager : MonoBehaviour {
         yield return new WaitForSeconds(1);
         wAnim.SetBool("Win", false);
         lAnim.SetBool("Loss", false);
-        yield return new WaitForSecondsRealtime(3f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(Random.Range(0, UnityEngine.SceneManagement.SceneManager.sceneCount-1));
+        yield return null;
+    }
+    public void RandomScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Random.Range(0, UnityEngine.SceneManagement.SceneManager.sceneCount - 1));
     }
     public IEnumerator Credits()
     {
