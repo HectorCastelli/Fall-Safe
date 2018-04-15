@@ -9,12 +9,19 @@ public class CollisionEvaluation : MonoBehaviour {
     public float CollisionScore = 0;
 
     public Transform firstImpactPoint;
-    
+    public GameObject firstImpactCamera;
+
     public void FinishAnimation()
     {
         Debug.Log("FinishAnimation");
         this.GetComponent<Animator>().enabled = false;
         _isEnabled = true;
+    }
+
+    public void ResumeSimmulation()
+    {
+        foreach (Rigidbody rb in GetComponentsInChildren<Rigidbody>())
+            rb.isKinematic = false;
     }
 
     public void AddCollision(Collision collision, int weight)
@@ -25,6 +32,7 @@ public class CollisionEvaluation : MonoBehaviour {
             //Return if the collision is with itself, only consider after they are already touching the ground.
             if (collision.collider.CompareTag("Player")) return;
             firstImpactPoint.position = collision.contacts[0].point;
+            firstImpactCamera.SetActive(true);
             _isColliding = true;
             weight *= 2;
         }
