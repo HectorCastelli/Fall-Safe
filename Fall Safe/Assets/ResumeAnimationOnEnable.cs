@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class ResumeAnimationOnEnable : MonoBehaviour {
     public Animator anim;
+    public bool Forwards=true;
+
     private void OnEnable()
     {
-        anim.speed = 1;
+        anim.SetBool("Forward", Forwards);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.speed = 1;
+            //MUSIC HERE
+        }
     }
 }
