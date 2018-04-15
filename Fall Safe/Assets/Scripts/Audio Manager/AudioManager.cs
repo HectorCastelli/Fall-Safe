@@ -63,7 +63,8 @@ public class AudioManager : MonoBehaviour
         Footstep_Soft_LivingRoom2,
         Tripwire_LivingRoom,
         FallSound,
-        SlowDown
+        SlowDown,
+        Win
 
     }
     public enum BackgroundMusicEnum

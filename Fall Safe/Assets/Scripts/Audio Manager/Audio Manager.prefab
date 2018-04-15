@@ -457,6 +457,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 27537f1516f860e4d83cd5ba6bc8814a, type: 3}
   - {fileID: 8300000, guid: 67b9b22465dac2c4ea99b56692bfbfd2, type: 3}
   - {fileID: 8300000, guid: 182052ce4d980ae4aa97ac438924d971, type: 3}
+  - {fileID: 8300000, guid: c54a826481e757a408efafaea0dedce5, type: 3}
   BGMusic1: {fileID: 82917552718878800}
   BGMusic2: {fileID: 82911026018721514}
   PlaySoundEffects: {fileID: 82025160882434258}

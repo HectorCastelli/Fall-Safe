@@ -55,7 +55,8 @@ public class CollisionEvaluation : MonoBehaviour
         if (FindObjectOfType<SliderInfo>().GetSliderValue > 0.5f)
         {
             FindObjectOfType<UIManager>().Win();
-            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Footstep_Soft_LivingRoom2, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Fall_Bathroom_Hard1, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+            myAudioMan.TriggerSoundEffect(AudioManager.SoundEffectsEnum.Win, new Vector3(transform.position.x, transform.position.y, transform.position.z));
         }
         else
         {
