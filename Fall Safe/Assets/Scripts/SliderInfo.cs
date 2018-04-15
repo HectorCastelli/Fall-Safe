@@ -6,7 +6,7 @@ public class SliderInfo : MonoBehaviour
 {
     [SerializeField] Image HealthBarImage;
     bool hasPressed = false;
-    
+
     // Use this for initialization
     void Start()
     {
@@ -16,8 +16,8 @@ public class SliderInfo : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HealthBarImage.fillAmount -= (Time.fixedDeltaTime/5);
-        if (Input.GetMouseButtonDown(0)&&!hasPressed)
+        HealthBarImage.fillAmount -= (Time.fixedDeltaTime / 3);
+        if (Input.GetMouseButtonDown(0) && !hasPressed)
         {
             StartCoroutine(AdvanceBar());
         }
@@ -25,12 +25,14 @@ public class SliderInfo : MonoBehaviour
     public float GetSliderValue
     {
         get { return HealthBarImage.fillAmount; }
-       
+
     }
-  IEnumerator  AdvanceBar()
+    IEnumerator AdvanceBar()
     {
         hasPressed = true;
-        yield return new WaitForSeconds(.1f);
-        Debug.Log("Current Fill Amount = "+ HealthBarImage.fillAmount);
+        HealthBarImage.fillAmount += .12f;
+        yield return new WaitForSeconds(.075f);
+        hasPressed = false;
+        Debug.Log("Current Fill Amount = " + HealthBarImage.fillAmount);
     }
 }
