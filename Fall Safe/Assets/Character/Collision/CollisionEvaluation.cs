@@ -33,6 +33,8 @@ public class CollisionEvaluation : MonoBehaviour {
             if (collision.collider.CompareTag("Player")) return;
             firstImpactPoint.position = collision.contacts[0].point;
             firstImpactCamera.SetActive(true);
+            this.GetComponentInChildren<Animator>().enabled = false;
+
             _isColliding = true;
             weight *= 2;
         }
