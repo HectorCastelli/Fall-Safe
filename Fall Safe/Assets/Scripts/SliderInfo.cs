@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class SliderInfo : MonoBehaviour
 {
     [SerializeField] Image HealthBarImage;
-    bool hasPressed = false;
+
 
     // Use this for initialization
     void Start()
@@ -14,25 +14,19 @@ public class SliderInfo : MonoBehaviour
         HealthBarImage.fillAmount = 0;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        HealthBarImage.fillAmount -= (Time.fixedDeltaTime / 3);
-        if (Input.GetMouseButtonDown(0) && !hasPressed)
+        HealthBarImage.fillAmount -= (Time.fixedDeltaTime / 5f);
+        if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(AdvanceBar());
+            HealthBarImage.fillAmount += .15f;
         }
     }
+
+
     public float GetSliderValue
     {
         get { return HealthBarImage.fillAmount; }
 
-    }
-    IEnumerator AdvanceBar()
-    {
-        hasPressed = true;
-        HealthBarImage.fillAmount += .12f;
-        yield return new WaitForSeconds(.075f);
-        hasPressed = false;
-        Debug.Log("Current Fill Amount = " + HealthBarImage.fillAmount);
     }
 }
