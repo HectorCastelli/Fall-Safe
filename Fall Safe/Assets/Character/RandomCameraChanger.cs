@@ -9,7 +9,7 @@ public class RandomCameraChanger : MonoBehaviour {
 
     public bool _isEnabled = false;
 
-    private float timer;
+    private float timer = 0;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class RandomCameraChanger : MonoBehaviour {
         {
             go.SetActive(false);
         }
-        cameras[Random.Range(0, cameras.Count - 1)].SetActive(true);
+        //cameras[Random.Range(0, cameras.Count - 1)].SetActive(true);
     }
 
     // Update is called once per frame

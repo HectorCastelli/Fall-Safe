@@ -11,6 +11,12 @@ public class CollisionEvaluation : MonoBehaviour {
     public Transform firstImpactPoint;
     public GameObject firstImpactCamera;
 
+    public void StopAnimatorAndWait()
+    {
+        Debug.Log("Here");
+        this.GetComponent<Animator>().speed = 0;
+    }
+
     public void EnableRagdoll()
     {
         Debug.Log("FinishAnimation");
