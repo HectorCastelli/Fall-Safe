@@ -11,7 +11,7 @@ public class CollisionEvaluation : MonoBehaviour {
     public Transform firstImpactPoint;
     public GameObject firstImpactCamera;
 
-    public void FinishAnimation()
+    public void EnableRagdoll()
     {
         Debug.Log("FinishAnimation");
         this.GetComponent<Animator>().enabled = false;
